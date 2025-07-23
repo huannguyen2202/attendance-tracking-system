@@ -24,3 +24,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* @layer utilities {
+  .nav__link {
+    @apply relative text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after: origin-right
+  }
+} */
+
+@layer components {
+  .nav__link {
+    @apply relative text-base font-medium w-fit block;
+  }
+
+  .nav__link::after {
+    content: '';
+    @apply block absolute h-[3px] w-full bg-pink-600 scale-x-0 origin-right transition duration-300;
+  }
+
+  .nav__link:hover::after {
+    @apply scale-x-100;
+  }
+}
