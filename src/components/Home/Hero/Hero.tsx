@@ -17,8 +17,8 @@ const Hero = () => {
                         </div>
 
                         {/* Heading */}
-                        <h1 
-                            data-aos="fade-up" 
+                        <h1
+                            data-aos="fade-up"
                             className="text-2xl sm:text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3rem] lg:leading-[3.5rem]">the premier workspace companion for your daily needs.
                         </h1>
 
@@ -27,28 +27,28 @@ const Hero = () => {
 
                         {/* play store and app store image */}
                         <div className="flex mt-8 mb-8 items-center space-x-4">
-                            <Image 
-                                src="/images/gp.png" 
-                                alt='Play store' 
-                                width={150} 
-                                height={150} 
+                            <Image
+                                src="/images/gp.png"
+                                alt='Play store'
+                                width={150}
+                                height={150}
                                 className="object-contain"
                             />
-                            <Image 
-                                src="/images/as.png" 
-                                alt='App store' 
-                                width={150} 
-                                height={150} 
+                            <Image
+                                src="/images/as.png"
+                                alt='App store'
+                                width={150}
+                                height={150}
                                 className="object-contain"
                             />
                         </div>
                     </div>
                     {/* Image content */}
-                    <div 
-                        data-aos="fade-up" 
-                        data-aos-delay="200" 
+                    <div
+                        data-aos="fade-up"
+                        data-aos-delay="200"
                         className="hidden lg:block">
-                            <Image src="/images/hero.png" alt='hero' width={700} height={700}></Image>
+                        <Image src="/images/hero.png" alt='hero' width={700} height={700}></Image>
                     </div>
                 </div>
             </div>

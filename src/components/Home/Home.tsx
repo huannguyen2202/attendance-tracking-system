@@ -9,6 +9,8 @@ import Price from './Price/Price'
 import Offer from './Offer/Offer'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ResponsiveNav from './Navbar/ResponsiveNav'
+import Footer from './Footer/Footer'
 
 const Home = () => {
   useEffect(() => {
@@ -27,6 +29,7 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
+      <ResponsiveNav />
       <Hero />
       <WhyChoose />
       <AnalyticsFeature />
@@ -34,6 +37,7 @@ const Home = () => {
       <Review />
       <Price />
       <Offer />
+      <Footer />
     </div>
   )
 }

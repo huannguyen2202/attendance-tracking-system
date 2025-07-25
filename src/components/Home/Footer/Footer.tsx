@@ -53,19 +53,19 @@ const Footer = () => {
                         </h3>
                         <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'>
                             <li className='flex items-center'>
-                                <FaMapMarkedAlt className='mr-2'/>
+                                <FaMapMarkedAlt className='mr-2' />
                                 Amsterdam, Netherlands
                             </li>
                             <li className='flex items-center'>
-                                <FaPhoneAlt className='mr-2'/>
+                                <FaPhoneAlt className='mr-2' />
                                 +84 968 040 043
                             </li>
                             <li className='flex items-center'>
-                                <FaClock className='mr-2'/>
+                                <FaClock className='mr-2' />
                                 7 Days 8am -10am
                             </li>
                             <li className='flex items-center'>
-                                <FaEnvelope className='mr-2'/>
+                                <FaEnvelope className='mr-2' />
                                 huannguyenbk97@gmail.com
                             </li>
                         </ul>
@@ -80,13 +80,13 @@ const Footer = () => {
                     <div className='flex items-center space-x-4 mt-4 md:mt-0'>
                         <span>Social : </span>
                         <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaFacebook/>
+                            <FaFacebook />
                         </Link>
                         <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaTwitter/>
+                            <FaTwitter />
                         </Link>
                         <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaDribbble/>
+                            <FaDribbble />
                         </Link>
                     </div>
                 </div>
