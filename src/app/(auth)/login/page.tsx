@@ -9,6 +9,7 @@ import { LoginPayload } from '@/types/auth.type';
 import { handleApiError } from '@/ultils/errorHandler';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation'; // với App Router
+import Cookies from 'js-cookie'; // 👈 import thêm dòng này
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -25,8 +26,22 @@ const LoginPage = () => {
         try {
             const res = await Login(data);
             toast.success('Đăng nhập thành công!');
-            console.log('Login thành công:', res);
-            // TODO: lưu token, chuyển hướng
+            console.log('Đăng nhập thành công:', res);
+            Cookies.set(
+                'accessToken', res.tokens.access.token,
+                {
+                    expires: 7, // 7 ngày
+                    secure: true,
+                    sameSite: 'Lax',
+                }
+            );
+
+            Cookies.set('userInfo', JSON.stringify(res.user), {
+                expires: 7,
+                secure: true,
+                sameSite: 'Lax',
+            });
+            // const accessToken = Cookies.get('accessToken');
             router.push('/home');
         } catch (error: unknown) {
             const msg = handleApiError(error);
