@@ -15,7 +15,7 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
       <div className={`fixed ${navOpen} inset-0 transform transition-all duration-500 z-[10000] bg-black/70 w-full h-screen`}>
       </div>
       {/* Navlinks */}
-      <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-indigo-900 space-y-6 z-[10006]`}>
+      <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-indigo-900/50 backdrop-blur-md space-y-6 z-[10006]`}>
         {navLinks.map((link) => {
           return (
             <Link href={link.url} key={link.id}>
