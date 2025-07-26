@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaClock, FaDribbble, FaEnvelope, FaFacebook, FaMapMarkedAlt, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
@@ -11,9 +12,16 @@ const Footer = () => {
                     {/* Logo and description */}
                     <div>
                         {/* Logo */}
-                        <h1 className='text-xl md:text-2xl font-bold'>
+                        {/* <h1 className='text-xl md:text-2xl font-bold'>
                             <span className='text-3xl md:text-4xl text-pink-700'>A</span>ppify
-                        </h1>
+                        </h1> */}
+                        <Image
+                            src="/svg-images/comon/5sao-logo-horizoltal.svg"
+                            alt="hero"
+                            width={190}
+                            height={70}
+                            style={{ height: 'auto', width: '190px' }}
+                        />
                         {/* Description */}
                         <p className='mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600'>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.

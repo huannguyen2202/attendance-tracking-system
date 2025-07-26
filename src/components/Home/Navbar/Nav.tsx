@@ -7,6 +7,9 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie'; // 👈 Nhớ cài: npm install js-cookie
 import toast from 'react-hot-toast';
 import Image from 'next/image';
+import { FaChevronDown } from 'react-icons/fa';
+import { GoPerson } from "react-icons/go";
+import { GoMoveToEnd } from "react-icons/go";
 
 type Props = {
     openNav: () => void
@@ -76,14 +79,30 @@ const Nav = ({ openNav }: Props) => {
     }, []);
 
     return (
-        <div className={`fixed ${navBg ? 'bg-white shadow-md' : "fixed"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
+        <div className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md' : "fixed border-b border-b-gray-200"} w-full transition-all duration-200 h-[10vh] z-[1001]`}>
             <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
                 {/* LOGO */}
                 {/* <h1 className="text-xl md:text-3xl font-bold">
                     <span className="text-3xl md:text-4xl text-pink-700">A</span>
                     ppify
                 </h1> */}
-                <Image src="/svg-images/comon/star.svg" alt='hero' width={70} height={70}></Image>
+                <Image
+                    className='hidden md:block'
+                    src="/svg-images/comon/5sao-logo-horizoltal.svg"
+                    alt="hero"
+                    width={250}
+                    height={70}
+                    style={{ height: '100%', width: 'auto' }}
+                />
+
+                <Image
+                    className='block md:hidden'
+                    src="/svg-images/comon/star.svg"
+                    alt="hero"
+                    width={250}
+                    height={70}
+                    style={{ height: '80%', width: 'auto' }}
+                />
 
                 {/* NavLinks */}
                 <div className="hidden lg:flex items-center space-x-10">
@@ -105,43 +124,44 @@ const Nav = ({ openNav }: Props) => {
                                 <div className="w-8 h-8 rounded-full bg-blue-300 flex items-center justify-center text-blue-700 text-xl">
                                     {userInfo.hoTen.charAt(0).toUpperCase()}
                                 </div>
-                                <span className="text-base font-semibold text-gray-700 hidden md:inline">
-                                    {userInfo.hoTen}
-                                </span>
+                                <div className="flex items-center gap-2 text-base font-semibold text-gray-700">
+                                    <div>{userInfo.hoTen}</div>
+                                    <FaChevronDown className={`text-sm transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
+                                </div>
                             </div>
 
                             {isMenuOpen && (
-                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                                <div
+                                    data-aos="zoom-in"
+                                    className="absolute right-0 mt-3 w-52 rounded-md bg-white shadow-md z-50 border border-gray-200 py-5"
+                                >
                                     <button
                                         onClick={() => {
                                             router.push('/profile');
                                             setIsMenuOpen(false);
                                         }}
-                                        className="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer"
                                     >
-                                        <svg className="w-4 h-4 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M10 10a4 4 0 100-8 4 4 0 000 8zm1 2H9a4 4 0 00-4 4v1h10v-1a4 4 0 00-4-4z" />
-                                        </svg>
+                                        <GoPerson className='mr-2 text-xl text-blue-600' />
                                         Thông tin cá nhân
                                     </button>
+
                                     <button
                                         onClick={() => {
                                             handleButtonClick();
                                             setIsMenuOpen(false);
                                         }}
-                                        className="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer"
                                     >
-                                        <svg className="w-4 h-4 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M6 2a1 1 0 011 1v1h6V3a1 1 0 112 0v1a2 2 0 012 2v10a2 2 0 01-2 2v1a1 1 0 11-2 0v-1H7v1a1 1 0 11-2 0v-1a2 2 0 01-2-2V6a2 2 0 012-2V3a1 1 0 011-1zM5 6v10h10V6H5z" />
-                                        </svg>
+                                        <GoMoveToEnd className='mr-2 text-xl text-blue-600' />
                                         Đăng xuất
                                     </button>
                                 </div>
                             )}
                         </div>
                     )}
-                </div>
 
+                </div>
                 {/* Burger menu */}
                 <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-black md:hidden" />
             </div>
