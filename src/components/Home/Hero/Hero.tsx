@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className="w-full pt-[4vh] md:pt-[10vh] h-screen bg-[#f7f6fb]">
+        <div className="w-full pt-[4vh] md:pt-[8vh] h-screen bg-[#f7f6fb]">
             <div className="flex justify-center flex-col w-[90%] sm:w-[80%] h-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
                     {/* Text Content */}
@@ -19,7 +19,9 @@ const Hero = () => {
                         {/* Heading */}
                         <h1
                             data-aos="fade-up"
-                            className="text-2xl sm:text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3rem] lg:leading-[3.5rem]">the premier workspace companion for your daily needs.
+                            className="text-2xl sm:text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3rem] lg:leading-[3.5rem]">Ứng dụng số 1
+                            ngành xây dựng, chăm sóc nhà,
+                            sửa chữa vặt, gọi thợ thầu.
                         </h1>
 
                         {/* Description */}

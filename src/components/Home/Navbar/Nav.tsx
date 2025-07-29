@@ -58,6 +58,7 @@ const Nav = ({ openNav }: Props) => {
         if (isLoggedIn) {
             toast.success('Đăng xuất thành công!');
             Cookies.remove("accessToken");
+            Cookies.remove("refreshToken");
             Cookies.remove("userInfo");
             router.push("/login");
         } else {
@@ -79,7 +80,7 @@ const Nav = ({ openNav }: Props) => {
     }, []);
 
     return (
-        <div className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md' : "fixed border-b border-b-gray-200"} w-full transition-all duration-200 h-[10vh] z-[1001]`}>
+        <div className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md border-b border-b-gray-200' : "fixed border-b border-b-gray-200"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
             <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
                 {/* LOGO */}
                 {/* <h1 className="text-xl md:text-3xl font-bold">

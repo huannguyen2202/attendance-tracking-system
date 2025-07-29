@@ -52,6 +52,12 @@ const LoginPage = () => {
                 }
             );
 
+            Cookies.set("refreshToken", res.tokens.refresh.token, {
+                expires: 7, // 7 ngày
+                secure: true,
+                sameSite: "Lax",
+            });
+
             Cookies.set('userInfo', JSON.stringify(res.user), {
                 expires: 7,
                 secure: true,

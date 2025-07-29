@@ -1,16 +1,19 @@
-'use client'
-import Home from '@/components/Home/Home'
-import React from 'react'
-import { redirect } from "next/navigation";
+'use client';
 
+import { useEffect } from 'react';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
 
-const HomePage = () => {
-  redirect("/login");
-  return (
-    <div>
-      <Home />
-    </div>
-  )
+export default function HomePage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const accessToken = Cookies.get('accessToken');
+
+    if (accessToken) {
+      router.replace('/home');
+    } else {
+      router.replace('/login');
+    }
+  }, [router]); // 👈 Thêm router vào dependencies
 }
-
-export default HomePage

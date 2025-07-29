@@ -38,7 +38,7 @@ body {
 
   .nav__link::after {
     content: '';
-    @apply block absolute h-[3px] w-full bg-pink-600 scale-x-0 origin-right transition duration-300;
+    @apply block absolute h-[3px] w-full bg-[linear-gradient(to_right,#0000ff,#8a2be2,#ffb6c1)] scale-x-0 origin-right transition duration-300 rounded-3xl;
   }
 
   .nav__link:hover::after {

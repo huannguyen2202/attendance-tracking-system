@@ -53,3 +53,15 @@ export interface LoginResponse {
     idTinhTp: string;
   };
 }
+export interface RefreshTokenResponse {
+  tokens: {
+    access: {
+      token: string;
+      expires: string;
+    };
+    refresh: {
+      token: string;
+      expires: string;
+    };
+  };
+}

@@ -24,7 +24,7 @@ const Footer = () => {
                         />
                         {/* Description */}
                         <p className='mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.
+                            5Sao - Ứng dụng số 1 ngành xây dựng, chăm sóc nhà, sửa chữa vặt, gọi thợ thầu
                         </p>
                     </div>
 
@@ -62,19 +62,19 @@ const Footer = () => {
                         <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'>
                             <li className='flex items-center'>
                                 <FaMapMarkedAlt className='mr-2' />
-                                Amsterdam, Netherlands
+                                51 Tố Hữu, Hòa Cường Nam, Hải Châu, Đà Nẵng
                             </li>
                             <li className='flex items-center'>
                                 <FaPhoneAlt className='mr-2' />
-                                +84 968 040 043
+                                1900.636.083
                             </li>
                             <li className='flex items-center'>
                                 <FaClock className='mr-2' />
-                                7 Days 8am -10am
+                                8h - 17h
                             </li>
                             <li className='flex items-center'>
                                 <FaEnvelope className='mr-2' />
-                                huannguyenbk97@gmail.com
+                                5sao@gmail.com
                             </li>
                         </ul>
                     </div>
