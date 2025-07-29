@@ -1,10 +1,9 @@
-// src/services/auth.service.ts
-import axiosInstance from "../lib/axios";
+import axiosInstance from "@/lib/axios";
 import {
   LoginPayload,
   LoginResponse,
   RefreshTokenResponse,
-} from "../types/auth.type";
+} from "@/types/auth.type";
 
 export const Login = async (payload: LoginPayload): Promise<LoginResponse> => {
   const response = await axiosInstance.post<LoginResponse>(
@@ -19,9 +18,7 @@ export const refreshToken = async (
 ): Promise<RefreshTokenResponse> => {
   const response = await axiosInstance.post<RefreshTokenResponse>(
     "/auth/refresh-token",
-    {
-      refreshToken: token,
-    }
+    { refreshToken: token }
   );
   return response.data;
 };

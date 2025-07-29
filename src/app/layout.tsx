@@ -4,11 +4,11 @@ import "./globals.css";
 import PageLoading from "@/components/Comon/PageLoading";
 import { ToastContainer } from "react-toastify";
 import { Toaster } from 'react-hot-toast';
+import InitAOS from "@/components/Comon/initAOS";
 
 const font = Inter({
   weight: ['100', '300', '400', '500', '700', '900', '200', '600', '800'],
   subsets: ['latin']
-
 })
 
 export const metadata: Metadata = {
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
-
   return (
     <html lang="en">
       <body className={`${font.className} antialiased`}>
+        <InitAOS />
         <PageLoading />
         <ToastContainer />
         <Toaster position="top-right" />

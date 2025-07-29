@@ -1,36 +1,27 @@
 'use client';
 
+//**next */
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+//**React */
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+
+//**Toast message */
+import toast from 'react-hot-toast';
+
+//**icon */
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Login } from '@/services/auth.service';
+
 import { LoginPayload } from '@/types/auth.type';
 import { handleApiError } from '@/ultils/errorHandler';
-import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation'; // với App Router
-import Cookies from 'js-cookie'; // 👈 import thêm dòng này
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { loginAndSaveSession } from '@/services/auth/auth.manager';
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [, setErrorMsg] = useState('');
     const router = useRouter();
-
-    useEffect(() => {
-        const initAOS = async () => {
-            await import('aos');
-            AOS.init({
-                duration: 1000,
-                easing: 'ease',
-                once: true,
-                anchorPlacement: 'top-bottom',
-
-            });
-        };
-        initAOS();
-    }, [])
 
     const {
         register,
@@ -40,32 +31,10 @@ const LoginPage = () => {
 
     const onSubmit = async (data: LoginPayload) => {
         try {
-            const res = await Login(data);
-            toast.success('Đăng nhập thành công!');
-            console.log('Đăng nhập thành công:', res);
-            Cookies.set(
-                'accessToken', res.tokens.access.token,
-                {
-                    expires: 7, // 7 ngày
-                    secure: true,
-                    sameSite: 'Lax',
-                }
-            );
-
-            Cookies.set("refreshToken", res.tokens.refresh.token, {
-                expires: 7, // 7 ngày
-                secure: true,
-                sameSite: "Lax",
-            });
-
-            Cookies.set('userInfo', JSON.stringify(res.user), {
-                expires: 7,
-                secure: true,
-                sameSite: 'Lax',
-            });
-            // const accessToken = Cookies.get('accessToken');
-            router.push('/home');
-        } catch (error: unknown) {
+            await loginAndSaveSession(data);
+            toast.success("Đăng nhập thành công!");
+            router.push("/home");
+        } catch (error) {
             const msg = handleApiError(error);
             setErrorMsg(msg);
             toast.error(msg);

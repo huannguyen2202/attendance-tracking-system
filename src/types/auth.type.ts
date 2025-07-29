@@ -1,5 +1,3 @@
-// src/types/auth.type.ts
-
 export interface LoginPayload {
   soDienThoai: string;
   matKhau: string;
@@ -16,6 +14,7 @@ export interface LoginResponse {
       expires: string; // ISO date string
     };
   };
+
   user: {
     id: string;
     soDienThoai: string;
