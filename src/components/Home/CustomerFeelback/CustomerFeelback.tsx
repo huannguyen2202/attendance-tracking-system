@@ -21,11 +21,17 @@ const CustomerFeelback = () => {
                 </div>
 
                 {/* Text content */}
-                <div className='p-6'>
-                    <h1 className='text-base font-semibold text-orange-500'>
+                <div
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-center"
+                    data-aos-delay={150}
+                    className='p-6'>
+                    <h1
+                        className='text-base font-semibold text-orange-500'>
                         Hãy theo dõi để biết thêm thông tin về App 5Sao
                     </h1>
-                    <h1 className='mt-4 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900'>
+                    <h1
+                        className='mt-4 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900'>
                         Khách hàng đã nói gì về App 5Sao?
                     </h1>
                     <p className='mt-4 text-gray-600 text-sm font-medium leading-[2rem]'>
@@ -45,7 +51,7 @@ const CustomerFeelback = () => {
                             Giá cả minh bạch
                         </li>
                     </ul>
-                    <button className='mt-8 px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-800 transition-all duration-200 cursor-pointer'>
+                    <button className='shine-effect mt-8 px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-800 transition-all duration-200 cursor-pointer'>
                         Youtube 5Sao &rarr;
                     </button>
                 </div>

@@ -15,12 +15,12 @@ export const navLinks = [
     label: "Sản phẩm/Dịch vụ",
   },
   {
-    id: 3,
+    id: 4,
     url: "#",
     label: "Đơn hàng",
   },
   {
-    id: 4,
+    id: 5,
     url: "#",
     label: "Liên hệ",
   },

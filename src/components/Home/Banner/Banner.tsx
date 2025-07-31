@@ -64,7 +64,7 @@ const Banner = () => {
                 <Carousel
                     arrows={true}
                     autoPlay={true}
-                    autoPlaySpeed={5000}
+                    autoPlaySpeed={4000}
                     infinite
                     showDots
                     customDot={<CustomDot />}

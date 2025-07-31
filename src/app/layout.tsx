@@ -5,6 +5,7 @@ import PageLoading from "@/components/Comon/PageLoading";
 import { ToastContainer } from "react-toastify";
 import { Toaster } from 'react-hot-toast';
 import InitAOS from "@/components/Comon/initAOS";
+import '../styles/animations.css';
 
 const font = Inter({
   weight: ['100', '300', '400', '500', '700', '900', '200', '600', '800'],

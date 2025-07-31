@@ -85,7 +85,6 @@ const Footer = () => {
                 <div
                     className='border-t mt-8'>
                     <div 
-                        data-aos="fade-right"
                         className='mt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm'>
                         <p className='text-center md:text-left'>
                             &copy; 2025. Công ty cổ phần công nghệ FiveSS

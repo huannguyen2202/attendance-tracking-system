@@ -52,14 +52,21 @@ const Rating = () => {
 
     return (
         <div className="bg-[#fcf6fa] py-8">
-            <div className="lg:w-[90%] mx-auto p-12 overflow-visible">
-                <p className="text-center text-3xl mb-12 font-bold">Khách hàng đánh giá về 5Sao</p>
+            <div className="lg:w-[90%] w-100% mx-auto p-12 overflow-visible">
+                <p 
+                    data-aos="fade-right" 
+                    data-aos-anchor-placement="top-center" 
+                    data-aos-delay={100} 
+                    className="text-center text-xl md:text-2xl lg:text-3xl mb-12 font-bold">Khách hàng đánh giá về 5Sao</p>
 
-                <div data-aos="fade-right" className="relative mb-10">
+                <div 
+                    data-aos="fade-right" 
+                    data-aos-delay={200} 
+                    className="relative mb-10">
                     <Carousel
                         arrows
                         autoPlay
-                        autoPlaySpeed={5000}
+                        autoPlaySpeed={4000}
                         infinite
                         showDots
                         renderDotsOutside
@@ -72,7 +79,7 @@ const Rating = () => {
                         {ratings.map((rating, index) => (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200"
+                                className="shine-effect bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200 hover:border-blue-500 cursor-pointer"
                             >
                                 {/* Avatar + Tên + Chức vụ */}
                                 <div className="flex items-center mb-4">
