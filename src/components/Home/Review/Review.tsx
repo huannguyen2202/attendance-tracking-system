@@ -26,7 +26,7 @@ const Review = () => {
   return (
     <div className='pt-16 pb-16 bg-[#fcf6fa]'>
       <h1 className='mt-6 text-2xl md:text-3xl capitalize font-bold text-center'>
-        What client say about us
+        Khách hàng đánh giá về 5Sao
       </h1>
       <div className='mt-20 w-[90%] md:w[80%] mx-auto'>
         <Carousel

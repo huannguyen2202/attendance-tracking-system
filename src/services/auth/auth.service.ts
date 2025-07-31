@@ -7,7 +7,7 @@ import {
 
 export const Login = async (payload: LoginPayload): Promise<LoginResponse> => {
   const response = await axiosInstance.post<LoginResponse>(
-    "/merchant/login",
+    "v2/merchant/login",
     payload
   );
   return response.data;

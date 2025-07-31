@@ -91,7 +91,7 @@ const Nav = ({ openNav }: Props) => {
                     className='hidden md:block'
                     src="/svg-images/comon/5sao-logo-horizoltal.svg"
                     alt="hero"
-                    width={250}
+                    width={1000}
                     height={70}
                     style={{ height: '100%', width: 'auto' }}
                 />

@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className='bg-white py-10'>
             <div className='w-[90%] mx-auto px-4 sm:px-6 lg:px-8'>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8'>
 
                     {/* Logo and description */}
                     <div>
@@ -31,33 +31,34 @@ const Footer = () => {
                     {/* About us link */}
                     <div>
                         <h3 className='text-xl font-semibold text-gray-800'>
-                            About Us
+                            Dịch vụ
                         </h3>
                         <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'></ul>
-                        <li>Support Center</li>
-                        <li>Customer Support</li>
-                        <li>About Us</li>
-                        <li>Copyright</li>
-                        <li>Popular Campaign</li>
+                        <li>Sửa Điện Nước</li>
+                        <li>Thợ Lắp Đặt Điện Nước</li>
+                        <li>Sửa máy lạnh</li>
+                        <li>Tháo lắp máy lạnh</li>
+                        <li>Chống thấm</li>
+                        <li>Dịch vụ vệ sinh</li>
+                        <li>Dịch vụ công nghiệp</li>
                     </div>
-
                     {/* Our information links */}
-                    <div>
+                    {/* <div>
                         <h3 className='text-xl font-semibold text-gray-800'>
-                            Our Information
+                            Thông tin về 5Sao
                         </h3>
                         <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'></ul>
-                        <li>Return Policy</li>
+                        <li>Tin cậy</li>
                         <li>Privacy Policy</li>
                         <li>Terms & Condition</li>
                         <li>Site Map</li>
                         <li>Store Hours</li>
-                    </div>
+                    </div> */}
 
                     {/* Contact Info */}
                     <div>
                         <h3 className='text-xl font-semibold text-gray-800'>
-                            Contact Info
+                            Thông tin liên hệ
                         </h3>
                         <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'>
                             <li className='flex items-center'>
@@ -81,21 +82,27 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className='mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm'>
-                    <p className='text-center md:text-left'>
-                        Copyright &copy; 2025 Webdev. All rights reserved
-                    </p>
-                    <div className='flex items-center space-x-4 mt-4 md:mt-0'>
-                        <span>Social : </span>
-                        <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaFacebook />
-                        </Link>
-                        <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaTwitter />
-                        </Link>
-                        <Link href="#" className='text-gray-500 hover:text-gray-800'>
-                            <FaDribbble />
-                        </Link>
+                <div
+                    className='border-t mt-8'>
+                    <div 
+                        data-aos="fade-right"
+                        className='mt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm'>
+                        <p className='text-center md:text-left'>
+                            &copy; 2025. Công ty cổ phần công nghệ FiveSS
+                        </p>
+                        <div className='flex items-center space-x-4 mt-4 md:mt-0'>
+                            <span>Mạng xã hội : </span>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                                <FaFacebook />
+                            </Link>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                                <FaTwitter />
+                            </Link>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                                <FaDribbble />
+                            </Link>
+                        </div>
+
                     </div>
                 </div>
             </div>

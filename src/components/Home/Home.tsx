@@ -9,17 +9,21 @@ import Price from './Price/Price'
 import Offer from './Offer/Offer'
 import ResponsiveNav from './Navbar/ResponsiveNav'
 import Footer from './Footer/Footer'
+import Banner from './Banner/Banner'
+import Rating from './Rating/Rating'
 
 const Home = () => {
   return (
     <div className="overflow-hidden">
       <ResponsiveNav />
+      <Banner />
       <Hero />
       <WhyChoose />
       <AnalyticsFeature />
       <Feature />
-      <Review />
-      <Price />
+      {/* <Review /> */}
+      <Rating />
+      {/* <Price /> */}
       <Offer />
       <Footer />
     </div>
