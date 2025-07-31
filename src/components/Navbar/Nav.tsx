@@ -17,13 +17,12 @@ type Props = {
 
 type UserInfo = {
     hoTen: string;
-    // bạn có thể thêm các field khác như id, soDienThoai,... nếu cần
 };
 
 const Nav = ({ openNav }: Props) => {
     const [navBg, setNavBg] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userInfo, setUserInfo] = useState<UserInfo | null>(null); // 👈 Thêm state userInfo
+    const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -83,10 +82,6 @@ const Nav = ({ openNav }: Props) => {
         <div className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md border-b border-b-gray-200' : "fixed border-b border-b-gray-200"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
             <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
                 {/* LOGO */}
-                {/* <h1 className="text-xl md:text-3xl font-bold">
-                    <span className="text-3xl md:text-4xl text-pink-700">A</span>
-                    ppify
-                </h1> */}
                 <Image
                     className='hidden md:block'
                     src="/svg-images/comon/5sao-logo-horizoltal.svg"

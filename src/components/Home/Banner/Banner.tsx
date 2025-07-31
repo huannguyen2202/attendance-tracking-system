@@ -1,10 +1,17 @@
 'use client';
+//**React */
 import React, { useEffect, useState } from 'react';
+
+//**Next */
+import Image from 'next/image';
+
+//**Service & types */
 import { getBanner } from '@/services/banner.service';
 import { BannerResponse } from '@/types/banner.type';
+
+//**Carousel */
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Image from 'next/image';
 
 const responsive = {
     desktop: {
@@ -30,9 +37,8 @@ const CustomDot = ({ onClick, active }: any) => {
     return (
         <li
             onClick={onClick}
-            className={`mx-1 cursor-pointer transition-all duration-300 ${
-                active ? 'bg-blue-600 w-6' : 'bg-gray-400 w-1 h-1 rounded-full'
-            } h-[3px] inline-block rounded-full`}
+            className={`mx-1 cursor-pointer transition-all duration-300 ${active ? 'bg-blue-600 w-6' : 'bg-gray-400 w-1 h-1 rounded-full'
+                } h-[3px] inline-block rounded-full`}
         />
     );
 };
@@ -53,7 +59,7 @@ const Banner = () => {
     }, []);
 
     return (
-        <div className='pt-[8vh] md:pt-[8vh] bg-[#fcf6fa]'>
+        <div className='pt-[8vh] md:pt-[8vh] bg-[#F4F9FF]'>
             <div data-aos="fade-up" className='mx-auto w-[100%] md:w-[80%] mt-8 bg-white md:rounded-[10px] px-3 py-4'>
                 <Carousel
                     arrows={true}

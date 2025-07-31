@@ -7,12 +7,17 @@ export const navLinks = [
   {
     id: 2,
     url: "#",
-    label: "Thông tin",
+    label: "Gian hàng",
   },
   {
     id: 3,
     url: "#",
-    label: "Về 5Sao",
+    label: "Sản phẩm/Dịch vụ",
+  },
+  {
+    id: 3,
+    url: "#",
+    label: "Đơn hàng",
   },
   {
     id: 4,
