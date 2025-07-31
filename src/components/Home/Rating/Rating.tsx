@@ -52,10 +52,10 @@ const Rating = () => {
 
     return (
         <div className="bg-[#fcf6fa] py-8">
-            <div className="lg:w-[90%] mx-auto p-12 overflow-visible"> {/* ✅ Cho phép hiển thị dot bên ngoài */}
+            <div className="lg:w-[90%] mx-auto p-12 overflow-visible">
                 <p className="text-center text-3xl mb-12 font-bold">Khách hàng đánh giá về 5Sao</p>
 
-                <div className="relative mb-10"> {/* ✅ Tạo khoảng trống dưới carousel */}
+                <div data-aos="fade-right" className="relative mb-10">
                     <Carousel
                         arrows
                         autoPlay
@@ -72,7 +72,7 @@ const Rating = () => {
                         {ratings.map((rating, index) => (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl px-5 py-12 shadow-sm text-left h-full flex flex-col justify-between"
+                                className="bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200"
                             >
                                 {/* Avatar + Tên + Chức vụ */}
                                 <div className="flex items-center mb-4">
