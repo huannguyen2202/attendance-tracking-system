@@ -29,8 +29,8 @@ const CustomDot = ({ onClick, active }: any) => {
     return (
         <li
             onClick={onClick}
-            className={`mx-1 cursor-pointer transition-all duration-300 ${active ? 'bg-blue-600 w-6' : 'bg-gray-400 w-1 h-1 rounded-full'
-                } h-[3px] inline-block rounded-full`}
+            className={`mx-1 cursor-pointer transition-all duration-300 ${active ? 'bg-blue-600 w-6 h-[5px]' : 'bg-gray-400 w-1 h-1 rounded-full'
+                } h-[5px] inline-block rounded-full items-center`}
         />
     );
 };
@@ -52,7 +52,7 @@ const Rating = () => {
 
     return (
         <div className="bg-[#fcf6fa] py-8">
-            <div className="lg:w-[90%] w-100% mx-auto p-12 overflow-visible">
+            <div className="w-[95%] lg:w-[80%] w-100% mx-auto overflow-visible">
                 <p 
                     data-aos="fade-right" 
                     data-aos-anchor-placement="top-center" 
@@ -64,6 +64,7 @@ const Rating = () => {
                     data-aos-delay={200} 
                     className="relative mb-10">
                     <Carousel
+                        className='py-8'
                         arrows
                         autoPlay
                         autoPlaySpeed={4000}
@@ -79,7 +80,7 @@ const Rating = () => {
                         {ratings.map((rating, index) => (
                             <div
                                 key={index}
-                                className="shine-effect bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200 hover:border-blue-500 cursor-pointer"
+                                className="shine-effect bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200 hover:border-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300"
                             >
                                 {/* Avatar + Tên + Chức vụ */}
                                 <div className="flex items-center mb-4">

@@ -8,8 +8,8 @@ import Cookies from 'js-cookie'; // 👈 Nhớ cài: npm install js-cookie
 import toast from 'react-hot-toast';
 import Image from 'next/image';
 import { FaChevronDown } from 'react-icons/fa';
-import { GoPerson } from "react-icons/go";
 import { GoMoveToEnd } from "react-icons/go";
+import { LogOut, UserRound } from 'lucide-react';
 
 type Props = {
     openNav: () => void
@@ -80,8 +80,8 @@ const Nav = ({ openNav }: Props) => {
 
     return (
         <div
-            className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md border-b border-b-gray-200' : "fixed border-b border-b-gray-200"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
-            <div
+            className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md' : "fixed"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
+            <div data-aos="fade-right"
                 className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
                 {/* LOGO */}
                 <Image
@@ -138,9 +138,11 @@ const Nav = ({ openNav }: Props) => {
                                             router.push('/profile');
                                             setIsMenuOpen(false);
                                         }}
-                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer"
+                                        className="flex items-center w-full text-left px-4 py-2 text-[14px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
                                     >
-                                        <GoPerson className='mr-2 text-xl text-blue-600' />
+                                        {/* <GoPerson className='mr-2 text-xl text-blue-600' />   */}
+                                        {/* <LogOut className='mr-2 text-xl text-blue-600'/>   */}
+                                        <UserRound className='mr-2 text-md text-blue-600'/>                               
                                         Thông tin cá nhân
                                     </button>
 
@@ -151,7 +153,7 @@ const Nav = ({ openNav }: Props) => {
                                         }}
                                         className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer"
                                     >
-                                        <GoMoveToEnd className='mr-2 text-xl text-blue-600' />
+                                        <LogOut className='mr-2 text-md text-blue-600'/>
                                         Đăng xuất
                                     </button>
                                 </div>

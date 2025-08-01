@@ -37,8 +37,8 @@ const CustomDot = ({ onClick, active }: any) => {
     return (
         <li
             onClick={onClick}
-            className={`mx-1 cursor-pointer transition-all duration-300 ${active ? 'bg-blue-600 w-6' : 'bg-gray-400 w-1 h-1 rounded-full'
-                } h-[3px] inline-block rounded-full`}
+            className={`mx-1 cursor-pointer transition-all duration-300 ${active ? 'bg-blue-600 w-6 h-[5px]' : 'bg-gray-400 w-1 h-1 rounded-full'
+                } h-[5px] inline-block rounded-full`}
         />
     );
 };

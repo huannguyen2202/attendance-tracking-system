@@ -51,11 +51,11 @@ const Feature = () => {
                     className='mt-6 text-2xl md:text-3xl capitalize font-bold text-center'>
                     Công việc đang cần người
                 </h1>
-                <div className='grid mt-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+                <div className='grid mt-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
                     {features.map((feature, index) => (
                         <div data-aos="flip-right" data-aos-anchor-placement="top-center" data-aos-delay={`${index * 100}`}
                             key={index}
-                            className='flex items-center justify-center p-4 bg-white rounded-lg shadow-md space-x-3'>
+                            className='flex items-center justify-center p-4 bg-white rounded-lg shadow-md space-x-3 hover:scale-103 transition-transform duration-400'>
                             <div className='text-3xl w-14 h-14 bg-gray-800/10 flex items-center justify-center flex-col rounded-full'>
                                 <span>{feature.icon}</span>
                             </div>

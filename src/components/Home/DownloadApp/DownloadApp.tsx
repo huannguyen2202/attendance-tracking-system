@@ -13,7 +13,7 @@ const DownloadApp = () => {
     return (
         <div className="w-full bg-[#F4F9FF]">
             <div className="flex justify-center flex-col w-[90%] sm:w-[80%] mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 mt-10 mb-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap- mt-10 mb-10">
                     {/* Text Content */}
                     <div>
                         <h1 data-aos="fade-up" className="text-2xl sm:text-4xl mt-6 mb-6 font-bold text-justify">
@@ -31,7 +31,7 @@ const DownloadApp = () => {
                                                  hover:from-purple-700 hover:to-pink-600 
                                                 transition-all duration-300 backdrop-blur-sm"
                                 >
-                                    <p className="text-xs sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
+                                    <p className="text-md sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
                                         Tải App 5Sao Partner ngay <BsArrowRight />
                                     </p>
                                 </div>
@@ -41,7 +41,7 @@ const DownloadApp = () => {
                                     <Image src="/images/as.png" alt='App store' width={150} height={150} className="object-contain" />
                                 </div>
                             </div>
-                            <Image src="/images/comon/qr.png" alt='qr' width={150} height={150} />
+                            <Image className='hidden md:block' src="/images/comon/qr.png" alt='qr' width={150} height={150} />
                         </div>
 
                         <div className='flex items-center gap-8'>
@@ -50,7 +50,7 @@ const DownloadApp = () => {
                                 <p>5000+</p>
                                 <p>Thợ thầu, đại lý hài lòng</p>
                             </div>
-                            <div className='text-center'>
+                            <div className='text-center hidden md:block'>
                                 <p >
                                     <span className='text-red-600 text-5xl font-semibold'>4.8</span>
                                     <span className='font-medium text-gray-900 text-xl'>/5</span>
