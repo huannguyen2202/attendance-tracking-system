@@ -8,9 +8,10 @@ import InitAOS from "@/components/Comon/initAOS";
 import '../styles/animations.css';
 
 const font = Inter({
-  weight: ['100', '300', '400', '500', '700', '900', '200', '600', '800'],
-  subsets: ['latin']
-})
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap', // tải font mượt hơn, tránh mất chữ khi load chậm
+});
 
 export const metadata: Metadata = {
   title: "5Sao Partner | Thợ thầu 5Sao",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       <body className={`${font.className} antialiased`}>
         <InitAOS />
         <PageLoading />

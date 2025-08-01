@@ -27,7 +27,7 @@ const CustomerFeelback = () => {
                     data-aos-delay={150}
                     className='p-6'>
                     <h1
-                        className='text-base font-semibold text-orange-500'>
+                        className='text-base font-semibold text-orange-500 sm:text-2xl md:text-4xl'>
                         Hãy theo dõi để biết thêm thông tin về App 5Sao
                     </h1>
                     <h1

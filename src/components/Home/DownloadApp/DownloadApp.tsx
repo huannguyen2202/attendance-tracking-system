@@ -15,8 +15,8 @@ const DownloadApp = () => {
             <div className="flex justify-center flex-col w-[90%] sm:w-[80%] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap- mt-10 mb-10">
                     {/* Text Content */}
-                    <div>
-                        <h1 data-aos="fade-up" className="text-2xl sm:text-4xl mt-6 mb-6 font-bold text-justify">
+                    <div data-aos="fade-right">
+                        <h1 className="text-2xl sm:text-4xl mt-6 mb-6 font-bold text-justify">
                             Ứng dụng số 1 ngành xây dựng, chăm sóc nhà, sửa chữa vặt, gọi thợ thầu.
                         </h1>
 
@@ -24,12 +24,21 @@ const DownloadApp = () => {
 
                         <div className="flex mt-8 mb-8 items-center space-x-4 justify-between">
                             <div>
-                                <div
-                                    data-aos="fade-up"
+                                {/* <div
                                     className="shine-effect relative w-fit py-2 px-3 md:px-6 rounded-full shadow-lg flex items-center space-x-3 
                                                 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 
                                                  hover:from-purple-700 hover:to-pink-600 
                                                 transition-all duration-300 backdrop-blur-sm"
+                                >
+                                    <p className="text-md sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
+                                        Tải App 5Sao Partner ngay <BsArrowRight />
+                                    </p>
+                                </div> */}
+                                <div
+                                    className="shine-effect relative w-fit py-2 px-3 md:px-6 rounded-full shadow-lg flex items-center space-x-3 
+                                        bg-gradient-to-r from-[#6D28D9] via-[#3B82F6] to-[#6EE7B7]
+                                        hover:from-purple-700 hover:to-pink-600 
+                                        transition-all duration-300 backdrop-blur-sm"
                                 >
                                     <p className="text-md sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
                                         Tải App 5Sao Partner ngay <BsArrowRight />

@@ -60,7 +60,7 @@ const Banner = () => {
 
     return (
         <div className='pt-[8vh] md:pt-[8vh] bg-[#F4F9FF]'>
-            <div data-aos="fade-up" className='mx-auto w-[100%] md:w-[80%] mt-8 bg-white md:rounded-[10px] px-3 py-4'>
+            <div data-aos="fade-right" className='mx-auto w-[100%] md:w-[80%] mt-8 bg-white md:rounded-[10px] px-3 py-4'>
                 <Carousel
                     arrows={true}
                     autoPlay={true}

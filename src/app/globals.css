@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 /* @layer utilities {
@@ -33,7 +33,7 @@ body {
 
 @layer components {
   .nav__link {
-    @apply relative text-base font-medium w-fit block;
+    @apply relative text-[16px] font-medium w-fit block;
   }
 
   .nav__link::after {

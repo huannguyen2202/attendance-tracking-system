@@ -8,7 +8,6 @@ import Cookies from 'js-cookie'; // 👈 Nhớ cài: npm install js-cookie
 import toast from 'react-hot-toast';
 import Image from 'next/image';
 import { FaChevronDown } from 'react-icons/fa';
-import { GoMoveToEnd } from "react-icons/go";
 import { LogOut, UserRound } from 'lucide-react';
 
 type Props = {
@@ -122,7 +121,7 @@ const Nav = ({ openNav }: Props) => {
                                 <div className="w-8 h-8 rounded-full bg-blue-300 flex items-center justify-center text-blue-700 text-xl">
                                     {userInfo.hoTen.charAt(0).toUpperCase()}
                                 </div>
-                                <div className="flex items-center gap-2 text-base font-semibold text-gray-700">
+                                <div className="flex items-center gap-2 text-base font-medium text-gray-700">
                                     <div>{userInfo.hoTen}</div>
                                     <FaChevronDown className={`text-sm transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`} />
                                 </div>
@@ -131,32 +130,33 @@ const Nav = ({ openNav }: Props) => {
                             {isMenuOpen && (
                                 <div
                                     data-aos="zoom-in"
-                                    className="absolute right-0 mt-3 w-52 rounded-md bg-white shadow-md z-50 border border-gray-200 py-5"
+                                    className="absolute right-0 mt-3 w-60 rounded-md bg-white shadow-md z-50 border border-gray-200 py-5"
                                 >
                                     <button
                                         onClick={() => {
                                             router.push('/profile');
                                             setIsMenuOpen(false);
                                         }}
-                                        className="flex items-center w-full text-left px-4 py-2 text-[14px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
+                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
                                     >
-                                        {/* <GoPerson className='mr-2 text-xl text-blue-600' />   */}
-                                        {/* <LogOut className='mr-2 text-xl text-blue-600'/>   */}
-                                        <UserRound className='mr-2 text-md text-blue-600'/>                               
+                                        <UserRound className='mr-2 text-md text-blue-500' />
                                         Thông tin cá nhân
                                     </button>
+
+                                    <hr className="my-2 border-gray-100" />
 
                                     <button
                                         onClick={() => {
                                             handleButtonClick();
                                             setIsMenuOpen(false);
                                         }}
-                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer"
+                                        className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
                                     >
-                                        <LogOut className='mr-2 text-md text-blue-600'/>
+                                        <LogOut className='mr-2 text-md text-blue-500' />
                                         Đăng xuất
                                     </button>
                                 </div>
+
                             )}
                         </div>
                     )}
