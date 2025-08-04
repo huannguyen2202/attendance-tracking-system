@@ -45,7 +45,7 @@ const LoginPage = () => {
         <div className="relative min-h-screen bg-[url('/images/comon/home-bg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
             <div
                 data-aos="zoom-in"
-                className="bg-white rounded-[12px] shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden lg:w-[60vw] w-full mx-6 lg:h-[75vh]"
+                className="bg-white rounded-[12px] shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden lg:w-[60vw] w-full mx-6 lg:h-[80vh]"
             >
                 {/* Left Side - Illustration */}
                 <div className="hidden md:flex items-center justify-center bg-[#F4F9FF] p-10">

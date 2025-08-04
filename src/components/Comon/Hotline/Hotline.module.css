@@ -1,0 +1,70 @@
+.box {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #ff0000, #ff5e00);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;
+  z-index: 9999;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease-in-out;
+
+  animation:
+    shake 4s infinite ease-in-out;
+  
+  box-shadow:
+    0 0 12px rgba(255, 80, 80, 0.6),
+    0 0 24px rgba(255, 80, 80, 0.3),
+    0 0 48px rgba(255, 80, 80, 0.2);
+}
+
+.box:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff5e00, #ff0000);
+}
+
+/* Sóng lan tỏa */
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 100, 100, 0.3);
+  border-radius: 999px;
+  z-index: -1;
+  animation: pulseWave 2.5s ease-out infinite;
+}
+
+.box::after {
+  animation-delay: 1.25s;
+  background: rgba(255, 80, 80, 0.2);
+}
+
+/* Sóng lan tỏa */
+@keyframes pulseWave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Rung nhẹ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50% { transform: translateX(-3px); }
+  20%, 40% { transform: translateX(3px); }
+}

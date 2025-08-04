@@ -12,6 +12,8 @@ import Banner from './Banner/Banner'
 import Rating from './Rating/Rating'
 import CustomerFeelback from './CustomerFeelback/CustomerFeelback'
 import DownloadApp from './DownloadApp/DownloadApp'
+import Hotline from '../Comon/Hotline/Hotline'
+import ScrollToTopButton from '../Comon/ScrollToTopButton/ScrollToTopButton'
 
 const Home = () => {
   return (
@@ -25,6 +27,8 @@ const Home = () => {
       <WhyChoose />
       <Offer />
       <Footer />
+      <Hotline />
+      <ScrollToTopButton />
     </div>
   )
 }
