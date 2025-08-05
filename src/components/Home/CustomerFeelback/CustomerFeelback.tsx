@@ -6,9 +6,9 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const CustomerFeelback = () => {
     return (
-        <div className='pt-24 pb-16'>
+        <div className='pt-24 pb-16 bg-[#F4F9FF]'>
             {/* Define grid */}
-            <div className='w-[90%] sm:w-[80%] mx-auto items-center grid grid-cols-1 lg:grid-cols-2 gap-18'>
+            <div className='w-[90%] sm:w-[75%] mx-auto items-center grid grid-cols-1 lg:grid-cols-2 gap-18'>
                 {/* Youtube */}
                 <div className="w-full aspect-video rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <iframe

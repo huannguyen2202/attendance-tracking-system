@@ -79,7 +79,7 @@ const Nav = ({ openNav }: Props) => {
 
     return (
         <div
-            className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md' : "fixed"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
+            className={`fixed ${navBg ? 'backdrop-blur-xl bg-[#EDF6F5]/50 shadow-md' : "fixed"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
             <div data-aos="fade-right"
                 className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
                 {/* LOGO */}

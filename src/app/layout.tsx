@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import PageLoading from "@/components/Comon/PageLoading";
 import { ToastContainer } from "react-toastify";
@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import InitAOS from "@/components/Comon/initAOS";
 import '../styles/animations.css';
 
-const font = Inter({
+const font = Roboto({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap', // tải font mượt hơn, tránh mất chữ khi load chậm

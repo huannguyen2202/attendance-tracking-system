@@ -45,7 +45,7 @@ const Feature = () => {
     ];
 
     return (
-        <div className='bg-pink-50 pt-20 pb-20'>
+        <div className='bg-[#EDF6F5] pt-20 pb-20'>
             <div className='w-[80%] mx-auto text-center'>
                 <h1 data-aos="fade-up"
                     className='mt-6 text-2xl md:text-3xl capitalize font-bold text-center'>

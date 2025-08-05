@@ -4,7 +4,6 @@ import React from 'react'
 
 //**Component */
 import WhyChoose from './WhyChoose/WhyChoose'
-import Feature from './Feature/Feature'
 import Offer from './Offer/Offer'
 import ResponsiveNav from '../Navbar/ResponsiveNav'
 import Footer from '../Footer/Footer'
@@ -14,6 +13,7 @@ import CustomerFeelback from './CustomerFeelback/CustomerFeelback'
 import DownloadApp from './DownloadApp/DownloadApp'
 import Hotline from '../Comon/Hotline/Hotline'
 import ScrollToTopButton from '../Comon/ScrollToTopButton/ScrollToTopButton'
+import OrderService from './OrderService/OrderService'
 
 const Home = () => {
   return (
@@ -21,7 +21,8 @@ const Home = () => {
       <ResponsiveNav />
       <Banner />
       <DownloadApp />
-      <Feature />
+      <OrderService />
+      {/* <Feature /> */}
       <CustomerFeelback />
       <Rating />
       <WhyChoose />

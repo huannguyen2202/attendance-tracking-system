@@ -12,7 +12,7 @@ import { BsArrowRight } from "react-icons/bs";
 const DownloadApp = () => {
     return (
         <div className="w-full bg-[#F4F9FF]">
-            <div className="flex justify-center flex-col w-[90%] sm:w-[80%] mx-auto">
+            <div className="flex justify-center flex-col w-[90%] lg:w-[75%] md:w-[90%] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap- mt-10 mb-10">
                     {/* Text Content */}
                     <div data-aos="fade-right">
@@ -78,7 +78,7 @@ const DownloadApp = () => {
                         data-aos-delay="200"
                         className="hidden lg:flex justify-end"
                     >
-                        <Image src="/images/phone.png" alt='hero' width={250} height={450} />
+                        <Image src="/images/app.png" alt='hero' width={400} height={500} />
                     </div>
                 </div>
             </div>

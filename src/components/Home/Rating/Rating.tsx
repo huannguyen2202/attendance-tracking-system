@@ -52,7 +52,7 @@ const Rating = () => {
 
     return (
         <div className="bg-[#fcf6fa] py-8">
-            <div className="w-[95%] lg:w-[80%] w-100% mx-auto overflow-visible">
+            <div className="w-[95%] lg:w-[77%] w-100% mx-auto overflow-visible">
                 <p 
                     data-aos="fade-right" 
                     data-aos-anchor-placement="top-center" 
