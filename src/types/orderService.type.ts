@@ -11,21 +11,29 @@ export type OrderServiceResponse = {
     };
     diaChi: string;
     hinhAnh: string[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     idCongViec: any[];      // Bạn có thể khai báo cụ thể hơn nếu biết structure
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     idPhuongXa: any[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     idQuanHuyen: any[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     idTinhTp: any[];
     idUser: string;
     loaiDonHang: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     lyDoHuyDon: any[];
     maDichVu: string;
     soDienThoai: string;
     soLuongBaoGia: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     soLuongBaoGias: any[];
     soLuongSanPham: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     taiLieuDinhKem: any[];
     tenKhachHang: string;
     thoiGianBatDau: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     thongTinDonDichVu: any[];
     trangThaiDon: number;
     xuatThongTinHoaDon: boolean;
@@ -33,7 +41,7 @@ export type OrderServiceResponse = {
 };
 
 export type PaginatedOrderServiceResponse = {
-    data: OrderService[];
+    data: OrderServiceResponse[];
     limit: number;
     page: number;
     status: number;
