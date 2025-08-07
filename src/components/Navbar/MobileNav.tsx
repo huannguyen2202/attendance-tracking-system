@@ -1,7 +1,13 @@
+//**React */
 import React from 'react'
+
+//**Comon */
 import { navLinks } from '@/constants/Constant';
 import Link from 'next/link';
+
+//**Icon */
 import { CgClose } from 'react-icons/cg';
+
 type Props = {
   showNav: boolean,
   closeNav: () => void;

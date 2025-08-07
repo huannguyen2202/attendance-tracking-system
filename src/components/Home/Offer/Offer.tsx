@@ -3,7 +3,7 @@ import React from 'react'
 const Offer = () => {
     return (
         <div className='flex items-center justify-center py-18 mb-20 bg-black'>
-            <div className='w-[90%] flex'>
+            <div className='w-[90%] flex lg:w-[75%]'>
                 <div>
                     <p className='text-white lg:text-xl'>Fanpage hỗ trợ đối tác 5Sao</p>
                     <iframe

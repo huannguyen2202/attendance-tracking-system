@@ -14,7 +14,9 @@ import toast from 'react-hot-toast';
 //**icon */
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
+//**Types */
 import { LoginPayload } from '@/types/auth.type';
+
 import { handleApiError } from '@/ultils/errorHandler';
 import { loginAndSaveSession } from '@/services/auth/auth.manager';
 

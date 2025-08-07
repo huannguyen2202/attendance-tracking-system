@@ -1,4 +1,4 @@
-export type BannerLinkType = '1' | '2' | '3' | '4';
+export type BannerLinkType = "1" | "2" | "3" | "4";
 
 export interface BannerItem {
   hinhAnhBanner: string;

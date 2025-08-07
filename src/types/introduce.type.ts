@@ -30,7 +30,7 @@ export interface IntroduceResponse {
   moiNguoiDanhGia5Sao: DanhGia5Sao[];
 
   thongTinLienHe5Sao: string[];
-  
+
   created_at?: string;
   updated_at?: string;
 }

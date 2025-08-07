@@ -24,26 +24,17 @@ const DownloadApp = () => {
 
                         <div className="flex mt-8 mb-8 items-center space-x-4 justify-between">
                             <div>
-                                {/* <div
-                                    className="shine-effect relative w-fit py-2 px-3 md:px-6 rounded-full shadow-lg flex items-center space-x-3 
-                                                bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 
-                                                 hover:from-purple-700 hover:to-pink-600 
-                                                transition-all duration-300 backdrop-blur-sm"
+                                <button
+                                    className="shine-effect font-semibold text-md sm:text-sm md:text-xl  py-2 px-3 md:px-6 rounded-full shadow-lg cursor-pointer group flex items-center gap-2 border 
+                                        bg-gradient-to-r from-[#6D28D9] via-[#3B82F6] to-[#6EE7B7] transition-all duration-200 hover:scale-105
+                                        text-white"
                                 >
-                                    <p className="text-md sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
-                                        Tải App 5Sao Partner ngay <BsArrowRight />
-                                    </p>
-                                </div> */}
-                                <div
-                                    className="shine-effect relative w-fit py-2 px-3 md:px-6 rounded-full shadow-lg flex items-center space-x-3 
-                                        bg-gradient-to-r from-[#6D28D9] via-[#3B82F6] to-[#6EE7B7]
-                                        hover:from-purple-700 hover:to-pink-600 
-                                        transition-all duration-300 backdrop-blur-sm"
-                                >
-                                    <p className="text-md sm:text-sm flex items-center gap-2 text-white md:text-xl font-semibold tracking-wide">
-                                        Tải App 5Sao Partner ngay <BsArrowRight />
-                                    </p>
-                                </div>
+                                    Tải App 5Sao Partner ngay
+                                    <BsArrowRight
+                                        size={22}
+                                        className="transition-transform duration-200 group-hover:translate-x-1"
+                                    />
+                                </button>
 
                                 <div className='flex gap-10 mt-10'>
                                     <Image src="/images/gp.png" alt='Play store' width={150} height={150} className="object-contain" />
@@ -78,7 +69,7 @@ const DownloadApp = () => {
                         data-aos-delay="200"
                         className="hidden lg:flex justify-end"
                     >
-                        <Image src="/images/app.png" alt='hero' width={400} height={500} />
+                        <Image src="/images/app-partner.png" alt='hero' width={400} height={500} />
                     </div>
                 </div>
             </div>

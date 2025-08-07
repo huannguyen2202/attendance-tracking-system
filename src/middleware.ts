@@ -6,7 +6,9 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isProtectedRoute =
-    pathname.startsWith("/home") || pathname.startsWith("/dashboard");
+    pathname.startsWith("/home") ||
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/store");
   const isPublicRoute = pathname === "/" || pathname === "/login";
 
   // 🔒 Nếu vào route bảo vệ mà không có token → chuyển hướng về /login
@@ -24,9 +26,10 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/", // Trang root
-    "/login", // Trang login
-    "/home", // Trang chính
+    "/",
+    "/login",
+    "/home",
+    "/store",
     "/dashboard/:path*", // Các route phụ
   ],
 };

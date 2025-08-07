@@ -1,12 +1,30 @@
-import { getOrderService } from '@/services/orderService.service';
+//**React */
 import React, { useEffect, useState } from 'react'
+
+//**Next */
+import Image from 'next/image';
+
+//**Shadcn */
+import { Skeleton } from "@/components/ui/skeleton"
+
+//**Icon */
+import { ArrowRight } from 'lucide-react';
+
+//**Service */
+import { getOrderService } from '@/services/orderService.service';
+
+//**Types */
 import { OrderServiceResponse } from '@/types/orderService.type';
 import { PaginatedOrderServiceResponse } from '@/types/orderService.type';
-import Image from 'next/image';
+
+//**Fns */
 import { format } from 'date-fns';
+
+//**Component comon */
 import PaginationControl from '@/components/Comon/PaginationControl/PaginationControl';
-import { ArrowRight } from 'lucide-react';
-import { Skeleton } from "@/components/ui/skeleton"
+
+//**Toast message */
+import toastMessage from '@/lib/toast';
 
 const OrderService = () => {
     const [orderServices, setOrderServices] = useState<OrderServiceResponse[]>([]);
@@ -14,6 +32,9 @@ const OrderService = () => {
     const [totalPages, setTotalPages] = useState<number>(0);
     const [limit] = useState<number>(10); // mặc định limit 10
     const [isLoading, setIsLoading] = useState<boolean>(true);
+    const submit = () => {
+        toastMessage.warning('Tính năng đang phát triển')
+    }
 
     useEffect(() => {
         const fetchOrderServices = async () => {
@@ -38,7 +59,7 @@ const OrderService = () => {
                 <div className='items-center lg:w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
                     <div className='flex items-center gap-3'>
                         <div className='w-[6px] h-[35px] bg-blue-500 rounded-full'></div>
-                        <p className='text-2xl md:text-3xl capitalize font-medium'>Công việc đang cần người</p>
+                        <p className='text-2xl md:text-2xl capitalize font-medium'>Công việc đang cần người</p>
                     </div>
                     <div>
                         <span className='border border-gray-200 flex items-center py-2 px-10 rounded-md justify-end'>
@@ -90,7 +111,7 @@ const OrderService = () => {
                                         />
                                         <p className='font-semibold ml-2'>{order.tenKhachHang}</p>
                                     </div>
-                                    <button
+                                    <button onClick={submit}
                                         className="shine-effect cursor-pointer group flex items-center gap-2 rounded-md border border-blue-600 px-2 py-1 text-blue-600 transition-all duration-200 hover:scale-105"
                                     >
                                         Báo giá

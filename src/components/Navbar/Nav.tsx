@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import Image from 'next/image';
 import { FaChevronDown } from 'react-icons/fa';
 import { LogOut, UserRound } from 'lucide-react';
+import { usePathname } from 'next/navigation'; // 👈 add trên đầu file
 
 type Props = {
     openNav: () => void
@@ -24,6 +25,7 @@ const Nav = ({ openNav }: Props) => {
     const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
     const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handler = () => {
@@ -79,20 +81,22 @@ const Nav = ({ openNav }: Props) => {
 
     return (
         <div
-            className={`fixed ${navBg ? 'backdrop-blur-xl bg-[#EDF6F5]/50 shadow-md' : "fixed"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
-            <div data-aos="fade-right"
-                className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
+            className={`fixed ${navBg ? 'backdrop-blur-xl bg-white/50 shadow-md border border-b-gray-100' : "fixed border border-b-gray-200"} w-full transition-all duration-200 h-[8vh] z-[1001]`}>
+            <div 
+                className="flex items-center h-full justify-between w-[90%] lg:w-[75%] mx-auto">
                 {/* LOGO */}
-                <Image
+                <Image 
+                    data-aos="zoom-in"
                     className='hidden md:block'
                     src="/svg-images/comon/5sao-logo-horizoltal.svg"
                     alt="hero"
                     width={1000}
                     height={70}
-                    style={{ height: '100%', width: 'auto' }}
+                    style={{ height: '80%', width: 'auto' }}
                 />
 
                 <Image
+                    data-aos="zoom-in"
                     className='block md:hidden'
                     src="/svg-images/comon/star.svg"
                     alt="hero"
@@ -102,16 +106,24 @@ const Nav = ({ openNav }: Props) => {
                 />
 
                 {/* NavLinks */}
-                <div className="hidden lg:flex items-center space-x-10">
-                    {navLinks.map((link) => (
-                        <Link href={link.url} key={link.id}>
-                            <p className="nav__link">{link.label}</p>
-                        </Link>
-                    ))}
+                <div 
+                    data-aos="zoom-in"
+                    className="hidden lg:flex items-center space-x-10">
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.url; // so sánh đường dẫn hiện tại
+
+                        return (
+                            <Link href={link.url} key={link.id}>
+                               <p className={`nav__link ${isActive ? 'active' : ''}`}>{link.label}</p>
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {/* User Name & Button */}
-                <div className="flex items-center space-x-4">
+                <div 
+                    data-aos="zoom-in"
+                    className="flex items-center space-x-4">
                     {isLoggedIn && userInfo && (
                         <div className="relative" id="user-dropdown">
                             <div
@@ -139,7 +151,7 @@ const Nav = ({ openNav }: Props) => {
                                         }}
                                         className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
                                     >
-                                        <UserRound className='mr-2 text-md text-blue-500' />
+                                        <UserRound size={20} className='mr-2 text-md text-blue-500' />
                                         Thông tin cá nhân
                                     </button>
 
@@ -152,7 +164,7 @@ const Nav = ({ openNav }: Props) => {
                                         }}
                                         className="flex items-center w-full text-left px-4 py-2 text-[15px] text-gray-800 hover:bg-gray-100 cursor-pointer font-medium"
                                     >
-                                        <LogOut className='mr-2 text-md text-blue-500' />
+                                        <LogOut size={20} className='mr-2 text-md text-blue-500' />
                                         Đăng xuất
                                     </button>
                                 </div>

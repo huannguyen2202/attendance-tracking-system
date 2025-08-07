@@ -1,29 +1,39 @@
-import { getIntroduce } from '@/services/introduce.service';
+//**React */
 import React, { useEffect, useState } from 'react'
-import { DanhGia5Sao } from '@/types/introduce.type';
+import Image from 'next/image';
+
+//**React multi */
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Image from 'next/image';
+
+//**Service */
+import { getIntroduce } from '@/services/introduce.service';
+
+//**Types */
+import { DanhGia5Sao } from '@/types/introduce.type';
+
+//**Icon */
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
         items: 3,
-        slidesToSlide: 1 // optional, default to 1.
+        slidesToSlide: 1
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
         items: 2,
-        slidesToSlide: 1 // optional, default to 1.
+        slidesToSlide: 1
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
         items: 1,
-        slidesToSlide: 1 // optional, default to 1.
+        slidesToSlide: 1
     }
 };
 
+// Custom dot Carousel
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomDot = ({ onClick, active }: any) => {
     return (
@@ -53,15 +63,15 @@ const Rating = () => {
     return (
         <div className="bg-[#fcf6fa] py-8">
             <div className="w-[95%] lg:w-[77%] w-100% mx-auto overflow-visible">
-                <p 
-                    data-aos="fade-right" 
-                    data-aos-anchor-placement="top-center" 
-                    data-aos-delay={100} 
+                <p
+                    data-aos="fade-right"
+                    data-aos-anchor-placement="top-center"
+                    data-aos-delay={100}
                     className="text-center text-xl md:text-2xl lg:text-3xl mb-12 font-bold">Khách hàng đánh giá về 5Sao</p>
 
-                <div 
-                    data-aos="fade-right" 
-                    data-aos-delay={200} 
+                <div
+                    data-aos="fade-right"
+                    data-aos-delay={200}
                     className="relative mb-10">
                     <Carousel
                         className='py-8'
@@ -82,7 +92,6 @@ const Rating = () => {
                                 key={index}
                                 className="shine-effect bg-white rounded-2xl px-5 py-12 text-left h-full flex flex-col justify-between border border-gray-200 hover:border-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300"
                             >
-                                {/* Avatar + Tên + Chức vụ */}
                                 <div className="flex items-center mb-4">
                                     <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border border-gray-200">
                                         <Image

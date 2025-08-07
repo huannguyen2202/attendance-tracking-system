@@ -1,20 +1,24 @@
+//**React */
+import React from 'react'
+
+//**Next */
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+
+//**Icon */
 import { FaClock, FaDribbble, FaEnvelope, FaFacebook, FaMapMarkedAlt, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
     return (
         <div className='bg-white py-10'>
-            <div className='w-[90%] mx-auto px-4 sm:px-6 lg:px-8'>
+            <div
+                data-aos="fade-right"
+                className='w-[90%] lg:w-[75%] mx-auto'>
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8'>
 
                     {/* Logo and description */}
                     <div>
                         {/* Logo */}
-                        {/* <h1 className='text-xl md:text-2xl font-bold'>
-                            <span className='text-3xl md:text-4xl text-pink-700'>A</span>ppify
-                        </h1> */}
                         <Image
                             src="/svg-images/comon/5sao-logo-horizoltal.svg"
                             alt="hero"
@@ -42,18 +46,6 @@ const Footer = () => {
                         <li>Dịch vụ vệ sinh</li>
                         <li>Dịch vụ công nghiệp</li>
                     </div>
-                    {/* Our information links */}
-                    {/* <div>
-                        <h3 className='text-xl font-semibold text-gray-800'>
-                            Thông tin về 5Sao
-                        </h3>
-                        <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'></ul>
-                        <li>Tin cậy</li>
-                        <li>Privacy Policy</li>
-                        <li>Terms & Condition</li>
-                        <li>Site Map</li>
-                        <li>Store Hours</li>
-                    </div> */}
 
                     {/* Contact Info */}
                     <div>
@@ -84,7 +76,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div
                     className='border-t mt-8'>
-                    <div 
+                    <div
                         className='mt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm'>
                         <p className='text-center md:text-left'>
                             &copy; 2025. Công ty cổ phần công nghệ FiveSS

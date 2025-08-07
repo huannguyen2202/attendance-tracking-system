@@ -3,7 +3,6 @@
 import React from 'react'
 
 //**Component */
-import WhyChoose from './WhyChoose/WhyChoose'
 import Offer from './Offer/Offer'
 import ResponsiveNav from '../Navbar/ResponsiveNav'
 import Footer from '../Footer/Footer'
@@ -22,10 +21,8 @@ const Home = () => {
       <Banner />
       <DownloadApp />
       <OrderService />
-      {/* <Feature /> */}
       <CustomerFeelback />
       <Rating />
-      <WhyChoose />
       <Offer />
       <Footer />
       <Hotline />
