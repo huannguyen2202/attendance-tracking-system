@@ -4,8 +4,10 @@ import {
     PaginationContent,
     PaginationItem,
     PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
 } from "@/components/ui/pagination"
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 
 interface PaginationProps {
     page: number;
@@ -60,12 +62,18 @@ const PaginationControl = ({ page, totalPages, onPageChange }: PaginationProps) 
 
                 {/* Previous */}
                 <PaginationItem>
-                    <PaginationLink
+                    {/* <PaginationLink
                         onClick={handlePrev}
                         className={`flex items-center gap-1 ${page === 1 ? "pointer-events-none opacity-50" : ""}`}
                     >
                         <ChevronLeft className="w-4 h-4" />
-                    </PaginationLink>
+                    </PaginationLink> */}
+                    <PaginationPrevious
+                        onClick={handlePrev}
+                        className={page === 1 ? "pointer-events-none opacity-50" : ""}
+                    >
+                        Trang trước
+                    </PaginationPrevious>
                 </PaginationItem>
 
                 {/* Page numbers */}
@@ -82,12 +90,18 @@ const PaginationControl = ({ page, totalPages, onPageChange }: PaginationProps) 
 
                 {/* Next */}
                 <PaginationItem>
-                    <PaginationLink
+                    {/* <PaginationLink
                         onClick={handleNext}
                         className={`flex items-center gap-1 ${page === totalPages ? "pointer-events-none opacity-50" : ""}`}
                     >
                         <ChevronRight className="w-4 h-4" />
-                    </PaginationLink>
+                    </PaginationLink> */}
+                    <PaginationNext
+                        onClick={handleNext}
+                        className={page === totalPages ? "pointer-events-none opacity-50" : ""}
+                    >
+                        Trang sau
+                    </PaginationNext>
                 </PaginationItem>
 
                 {/* Last page */}

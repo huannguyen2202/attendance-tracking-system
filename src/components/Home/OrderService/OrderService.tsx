@@ -57,19 +57,19 @@ const OrderService = () => {
     return (
         <div className='bg-white dark:bg-[#09090B] pt-10 pb-10'>
             <div className='w-[95%] mx-auto lg:w-[75%]'>
-                <div className='items-center lg:w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
+                <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:w-full'>
                     <div className='flex items-center gap-3'>
                         <div className='w-[6px] h-[35px] bg-blue-500 rounded-full'></div>
-                        <p className='text-2xl md:text-2xl capitalize font-medium text-gray-900 dark:text-white'>Công việc đang cần người</p>
+                        <p className='text-2xl md:text-2xl capitalize font-medium text-gray-900 dark:text-white'>
+                            Công việc đang cần người
+                        </p>
                     </div>
-                    <div>
-                        <span className='border border-gray-200 dark:border-gray-700 flex items-center py-2 px-10 rounded-md justify-end'>
-                            <PaginationControl
-                                page={page}
-                                totalPages={totalPages}
-                                onPageChange={(newPage) => setPage(newPage)}
-                            />
-                        </span>
+                    <div className='flex justify-end w-full lg:w-auto'>
+                        <PaginationControl
+                            page={page}
+                            totalPages={totalPages}
+                            onPageChange={(newPage) => setPage(newPage)}
+                        />
                     </div>
                 </div>
 

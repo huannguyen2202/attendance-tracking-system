@@ -46,9 +46,9 @@ const Store = () => {
     return (
         <div className='py-18 pt-[12vh] md:pt-[8vh] bg-[#F4F9FF] dark:bg-black'>
             <div className='lg:w-[75%] md:w-[90%] w-[90%] mx-auto'>
-                <div className='bg-[#F6F6F7] dark:bg-[#1f1f1f] px-1 py-1 mt-10'>
+                {/* <div className='bg-[#F6F6F7] dark:bg-[#1f1f1f] px-1 py-1 mt-10'>
                     <button className="text-black dark:text-white">Trở về</button>
-                </div>
+                </div> */}
                 <div
                     data-aos="fade-right"
                     className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-10'>
@@ -83,7 +83,7 @@ const Store = () => {
                             </p>
                         </div>
 
-                        <div className='flex items-center justify-between mt-5 text-black dark:text-white'>
+                        <div className='flex flex-col lg:flex-row items-center justify-between mt-5 text-black dark:text-white'>
                             <div className='flex space-x-2'>
                                 <span className='font-medium'>Mã gian hàng: </span>
                                 <span className='text-blue-700 dark:text-blue-400'>{store.maGianHang}</span>
