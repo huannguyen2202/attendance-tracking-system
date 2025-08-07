@@ -83,6 +83,10 @@ const Nav = ({ openNav }: Props) => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
+    const backHomPage = () => {
+        router.push('/home');
+    }
+
     return (
         <div
             className={`fixed w-full transition-all duration-200 h-[8vh] z-[1001] ${navBg
@@ -93,8 +97,9 @@ const Nav = ({ openNav }: Props) => {
             <div className="flex items-center h-full justify-between w-[90%] lg:w-[75%] mx-auto">
                 {/* LOGO */}
                 <Image
+                    onClick={backHomPage}
                     data-aos="zoom-in"
-                    className="hidden md:block"
+                    className="hidden md:block cursor-pointer"
                     src="/svg-images/comon/5sao-logo-horizoltal.svg"
                     alt="logo"
                     width={1000}
@@ -102,8 +107,9 @@ const Nav = ({ openNav }: Props) => {
                     style={{ height: '80%', width: 'auto' }}
                 />
                 <Image
+                    onClick={backHomPage}
                     data-aos="zoom-in"
-                    className="block md:hidden"
+                    className="block md:hidden cursor-pointer"
                     src="/svg-images/comon/star.svg"
                     alt="logo"
                     width={250}
