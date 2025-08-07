@@ -6,7 +6,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const CustomerFeelback = () => {
     return (
-        <div className='pt-24 pb-16 bg-[#F4F9FF]'>
+        <div className='pt-24 pb-16 bg-[#F4F9FF] dark:bg-[#09090B]'>
             {/* Define grid */}
             <div className='w-[90%] sm:w-[75%] mx-auto items-center grid grid-cols-1 lg:grid-cols-2 gap-18'>
                 {/* Youtube */}
@@ -31,13 +31,13 @@ const CustomerFeelback = () => {
                         Hãy theo dõi để biết thêm thông tin về App 5Sao
                     </h1>
                     <h1
-                        className='mt-4 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900'>
+                        className='mt-4 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white'>
                         Khách hàng đã nói gì về App 5Sao?
                     </h1>
-                    <p className='mt-4 text-gray-600 text-sm font-medium leading-[2rem]'>
+                    <p className='mt-4 text-gray-600 dark:text-gray-300 text-sm font-medium leading-[2rem]'>
                         5Sao giúp kết nối các đối tác gần nhất, rút ngắn thời gian tìm kiếm và xử lý yêu cầu. Mọi giao dịch đều minh bạch, tin cậy mang đến trải nghiệm tiện lợi và yên tâm.
                     </p>
-                    <ul className='mt-7 space-y-2 text-gray-800'>
+                    <ul className='mt-7 space-y-2 text-gray-800 dark:text-gray-100'>
                         <li className='flex items-center font-semibold'>
                             <FaCheckCircle className='text-green-500 mr-2' />
                             Nhanh chóng và tin cậy

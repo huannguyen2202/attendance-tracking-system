@@ -11,16 +11,18 @@ import { BsArrowRight } from "react-icons/bs";
 
 const DownloadApp = () => {
     return (
-        <div className="w-full bg-[#F4F9FF]">
+        <div className="w-full bg-[#F4F9FF] dark:bg-[#09090B] transition-colors duration-300">
             <div className="flex justify-center flex-col w-[90%] lg:w-[75%] md:w-[90%] mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap- mt-10 mb-10">
                     {/* Text Content */}
                     <div data-aos="fade-right">
-                        <h1 className="text-2xl sm:text-4xl mt-6 mb-6 font-bold text-justify">
+                        <h1 className="text-2xl sm:text-4xl mt-6 mb-6 font-bold text-justify text-black dark:text-white">
                             Ứng dụng số 1 ngành xây dựng, chăm sóc nhà, sửa chữa vặt, gọi thợ thầu.
                         </h1>
 
-                        <p className="text-gray-700">Tải ngay App 5Sao Partner để nhận việc làm và trải nghiệm các tiện ích trên ứng dụng!</p>
+                        <p className="text-gray-700 dark:text-gray-300">
+                            Tải ngay App 5Sao Partner để nhận việc làm và trải nghiệm các tiện ích trên ứng dụng!
+                        </p>
 
                         <div className="flex mt-8 mb-8 items-center space-x-4 justify-between">
                             <div>
@@ -46,17 +48,17 @@ const DownloadApp = () => {
 
                         <div className='flex items-center gap-8'>
                             <Image src="/images/comon/avatar.png" alt='avatar' width={100} height={100} />
-                            <div className='text-md text-gray-900 font-medium'>
+                            <div className='text-md text-gray-900 dark:text-white font-medium'>
                                 <p>5000+</p>
                                 <p>Thợ thầu, đại lý hài lòng</p>
                             </div>
                             <div className='text-center hidden md:block'>
-                                <p >
+                                <p>
                                     <span className='text-red-600 text-5xl font-semibold'>4.8</span>
-                                    <span className='font-medium text-gray-900 text-xl'>/5</span>
+                                    <span className='font-medium text-gray-900 dark:text-white text-xl'>/5</span>
                                 </p>
                                 <div>
-                                    <span className="shine-effect text-yellow-400 text-3xl">★★★★★★</span>
+                                    <button className="shine-effect text-yellow-400 text-3xl rounded-full">★★★★★★</button>
                                 </div>
                             </div>
                         </div>

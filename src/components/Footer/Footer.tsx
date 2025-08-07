@@ -10,7 +10,7 @@ import { FaClock, FaDribbble, FaEnvelope, FaFacebook, FaMapMarkedAlt, FaPhoneAlt
 
 const Footer = () => {
     return (
-        <div className='bg-white py-10'>
+        <div className='bg-white dark:bg-[#09090B] py-10'>
             <div
                 data-aos="fade-right"
                 className='w-[90%] lg:w-[75%] mx-auto'>
@@ -27,32 +27,33 @@ const Footer = () => {
                             style={{ height: 'auto', width: '190px' }}
                         />
                         {/* Description */}
-                        <p className='mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600'>
+                        <p className='mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600 dark:text-gray-300'>
                             5Sao - Ứng dụng số 1 ngành xây dựng, chăm sóc nhà, sửa chữa vặt, gọi thợ thầu
                         </p>
                     </div>
 
                     {/* About us link */}
                     <div>
-                        <h3 className='text-xl font-semibold text-gray-800'>
+                        <h3 className='text-xl font-semibold text-gray-800 dark:text-gray-100'>
                             Dịch vụ
                         </h3>
-                        <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'></ul>
-                        <li>Sửa Điện Nước</li>
-                        <li>Thợ Lắp Đặt Điện Nước</li>
-                        <li>Sửa máy lạnh</li>
-                        <li>Tháo lắp máy lạnh</li>
-                        <li>Chống thấm</li>
-                        <li>Dịch vụ vệ sinh</li>
-                        <li>Dịch vụ công nghiệp</li>
+                        <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500 dark:text-gray-300'>
+                            <li>Sửa Điện Nước</li>
+                            <li>Thợ Lắp Đặt Điện Nước</li>
+                            <li>Sửa máy lạnh</li>
+                            <li>Tháo lắp máy lạnh</li>
+                            <li>Chống thấm</li>
+                            <li>Dịch vụ vệ sinh</li>
+                            <li>Dịch vụ công nghiệp</li>
+                        </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className='text-xl font-semibold text-gray-800'>
+                        <h3 className='text-xl font-semibold text-gray-800 dark:text-gray-100'>
                             Thông tin liên hệ
                         </h3>
-                        <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500'>
+                        <ul className='mt-4 space-y-4 text-sm font-semibold text-gray-500 dark:text-gray-300'>
                             <li className='flex items-center'>
                                 <FaMapMarkedAlt className='mr-2' />
                                 51 Tố Hữu, Hòa Cường Nam, Hải Châu, Đà Nẵng
@@ -75,21 +76,21 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div
-                    className='border-t mt-8'>
+                    className='border-t border-gray-200 dark:border-gray-700 mt-8'>
                     <div
-                        className='mt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm'>
+                        className='mt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 dark:text-gray-300 text-sm'>
                         <p className='text-center md:text-left'>
                             &copy; 2025. Công ty cổ phần công nghệ FiveSS
                         </p>
                         <div className='flex items-center space-x-4 mt-4 md:mt-0'>
                             <span>Mạng xã hội : </span>
-                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'>
                                 <FaFacebook />
                             </Link>
-                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'>
                                 <FaTwitter />
                             </Link>
-                            <Link href="#" className='text-gray-500 hover:text-gray-800'>
+                            <Link href="#" className='text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'>
                                 <FaDribbble />
                             </Link>
                         </div>

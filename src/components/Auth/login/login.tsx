@@ -145,7 +145,7 @@ const LoginPage = () => {
                         {/* Submit */}
                         <button
                             type="submit"
-                            className="shine-effect cursor-pointer w-full mt-10 text-white py-2 rounded-full font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-400 hover:opacity-90 transition"
+                            className="shine-effect cursor-pointer w-full mt-10 text-white py-2 rounded-full font-semibold bg-gradient-to-r from-[#6D28D9] via-[#3B82F6] to-[#6EE7B7] hover:opacity-90 transition"
                         >
                             ĐĂNG NHẬP
                         </button>
