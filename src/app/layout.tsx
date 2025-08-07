@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import { Toaster } from 'react-hot-toast';
 import InitAOS from "@/components/Comon/initAOS";
 import '../styles/animations.css';
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/ui/theme-provider"
 // import { ThemeProvider } from "next-themes";
 
 const font = Roboto({
