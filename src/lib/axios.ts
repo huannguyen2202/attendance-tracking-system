@@ -1,53 +1,87 @@
-import axios from "axios";
-import Cookies from "js-cookie";
-import {
-  refreshAccessToken,
-  clearAuthTokens,
-} from "@/services/auth/auth.manager";
+import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
 
-const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  headers: {
-    "Content-Type": "application/json",
-  },
+// ==============================
+// CẤU HÌNH CHUNG
+// ==============================
+const api = axios.create({
+  baseURL: "/api",
+  withCredentials: true, // QUAN TRỌNG: gửi cookie HttpOnly kèm request
+  headers: { "Content-Type": "application/json" },
 });
 
-if (typeof window !== "undefined") {
-  // Gắn token vào headers request
-  axiosInstance.interceptors.request.use(
-    (config) => {
-      const token = Cookies.get("accessToken");
-      if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-      }
-      return config;
-    },
-    (error) => Promise.reject(error)
-  );
+// Nếu login của bạn là "/login" thì đổi biến này
+const LOGIN_PATH = "/login";
 
-  // Làm mới token nếu gặp lỗi 401
-  axiosInstance.interceptors.response.use(
-    (response) => response,
-    async (error) => {
-      const originalRequest = error.config;
+// ==============================
+// CHỐNG GỌI REFRESH TRÙNG LẶP
+// ==============================
+// Khi nhiều request cùng bị 401, ta chỉ gọi /auth/refresh 1 lần.
+// Các request còn lại sẽ "chờ" (queue) cho tới khi refresh xong.
+let isRefreshing = false;
+let pendingQueue: Array<(ok: boolean) => void> = [];
 
-      if (error.response?.status === 401 && !originalRequest._retry) {
-        originalRequest._retry = true;
-
-        try {
-          const newToken = await refreshAccessToken();
-          originalRequest.headers.Authorization = `Bearer ${newToken}`;
-          return axiosInstance(originalRequest);
-        } catch (refreshError) {
-          clearAuthTokens();
-          window.location.href = "/login";
-          return Promise.reject(refreshError);
-        }
-      }
-
-      return Promise.reject(error);
-    }
-  );
+function subscribePending(cb: (ok: boolean) => void) {
+  pendingQueue.push(cb);
+}
+function flushPending(ok: boolean) {
+  pendingQueue.forEach((cb) => cb(ok));
+  pendingQueue = [];
 }
 
-export default axiosInstance;
+// ==============================
+// INTERCEPTOR RESPONSE
+// ==============================
+api.interceptors.response.use(
+  (res) => res,
+  async (error: AxiosError) => {
+    const status = error.response?.status;
+    const original = error.config as (InternalAxiosRequestConfig & { _retry?: boolean }) | undefined;
+
+    // Nếu không có config gốc hoặc không phải 401 → trả lỗi như bình thường
+    if (!original || status !== 401) {
+      return Promise.reject(error);
+    }
+
+    // Đã retry 1 lần mà vẫn 401 → coi như refresh thất bại ⇒ chuyển về login
+    if (original._retry) {
+      if (typeof window !== "undefined") {
+        window.location.href = LOGIN_PATH;
+      }
+      return Promise.reject(error);
+    }
+
+    // Đánh dấu request này sẽ được retry 1 lần sau khi refresh thành công
+    original._retry = true;
+
+    // Nếu đang refresh: đợi kết quả rồi retry/redirect theo kết quả
+    if (isRefreshing) {
+      return new Promise((resolve, reject) => {
+        subscribePending((ok) => {
+          if (!ok) {
+            if (typeof window !== "undefined") window.location.href = LOGIN_PATH;
+            return reject(error);
+          }
+          resolve(api(original));
+        });
+      });
+    }
+
+    // Bắt đầu refresh (chỉ 1 luồng)
+    isRefreshing = true;
+    try {
+      await api.post("/auth/refresh"); // server sẽ set lại cookie access/refresh
+      isRefreshing = false;
+      flushPending(true);              // báo cho các request đang chờ là đã refresh OK
+      return api(original);            // retry request gốc
+    } catch (e) {
+      isRefreshing = false;
+      flushPending(false);             // báo cho các request đang chờ là refresh FAIL
+      if (typeof window !== "undefined") {
+        window.location.href = LOGIN_PATH; // đưa về login
+      }
+      return Promise.reject(e);
+    }
+  }
+);
+
+export default api;

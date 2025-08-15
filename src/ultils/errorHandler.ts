@@ -10,7 +10,7 @@ export function handleApiError(error: unknown): string {
     // Nếu token hết hạn
     if (status === 401 || message.toLowerCase().includes("token")) {
       // Tùy chọn: redirect về login
-      window.location.href = "/auth/login";
+      window.location.href = "/login";
     }
 
     return message;

@@ -1,55 +1,24 @@
-import Cookies from "js-cookie";
-import { LoginPayload } from "@/types/auth.type";
-import { Login, refreshToken } from "./auth.service";
+import { AuthService } from "./auth.service";
 
-// Cấu hình cookie dùng chung
-const cookieOptions = {
-  expires: 7,
-  secure: true,
-  sameSite: "Lax" as const,
-};
+/** Đăng nhập Admin: server sẽ set cookie HttpOnly "access_token" */
+export async function loginAdmin(payload: { email: string; password: string }) {
+  const { user } = await AuthService.adminLogin(payload);
+  return user; // nếu muốn lưu local state thì setState ở component/store
+}
 
-// Lưu token vào cookie
-export const saveAuthTokens = (
-  accessToken: string,
-  refreshTokenValue: string
-) => {
-  Cookies.set("accessToken", accessToken, cookieOptions);
-  Cookies.set("refreshToken", refreshTokenValue, cookieOptions);
-};
+/** Lấy hồ sơ hiện tại (server đọc cookie) */
+export async function fetchMe() {
+  const { user } = await AuthService.me();
+  return user;
+}
 
-// Lưu thông tin user (nếu cần lưu riêng)
-export const saveUserInfo = (user: object) => {
-  Cookies.set("userInfo", JSON.stringify(user), cookieOptions);
-};
+/** Đăng xuất: xoá cookie ở server, client điều hướng về /admin/login */
+export async function logoutAdmin() {
+  await AuthService.logout();
+  if (typeof window !== "undefined") window.location.href = "/admin/login";
+}
 
-// Xóa token/user
-export const clearAuthTokens = () => {
-  Cookies.remove("accessToken");
-  Cookies.remove("refreshToken");
-  Cookies.remove("userInfo");
-};
-
-// Đăng nhập và lưu token
-export const loginAndSaveSession = async (payload: LoginPayload) => {
-  const res = await Login(payload);
-  saveAuthTokens(res.tokens.access.token, res.tokens.refresh.token);
-  saveUserInfo(res.user);
-  return res.user;
-};
-
-// Làm mới access token
-export const refreshAccessToken = async () => {
-  const refresh = Cookies.get("refreshToken");
-  if (!refresh) throw new Error("Không tìm thấy refresh token");
-
-  const res = await refreshToken(refresh);
-  saveAuthTokens(res.tokens.access.token, res.tokens.refresh.token);
-  return res.tokens.access.token;
-};
-
-// Đăng xuất
-export const logout = () => {
-  clearAuthTokens();
-  window.location.href = "/login";
-};
+/** (Tuỳ chọn) Refresh session nếu bạn có endpoint POST /api/auth/refresh */
+export async function refreshSession() {
+  await AuthService.refresh(); // server set lại cookie access_token nếu cần
+}

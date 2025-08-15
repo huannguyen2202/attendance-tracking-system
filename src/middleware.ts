@@ -1,37 +1,26 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  const token = request.cookies.get("accessToken")?.value;
-  const { pathname } = request.nextUrl;
+export function middleware(req: NextRequest) {
+  const token = req.cookies.get("access_token")?.value;
+  const { pathname, search } = req.nextUrl;
 
-  const isProtectedRoute =
-    pathname.startsWith("/home") ||
-    pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/store");
-  const isPublicRoute = pathname === "/" || pathname === "/login";
+  const isAdminLogin = pathname === "/admin/login";
+  const isAdminArea  = pathname.startsWith("/admin") && !isAdminLogin;
 
-  // 🔒 Nếu vào route bảo vệ mà không có token → chuyển hướng về /login
-  if (isProtectedRoute && !token) {
-    return NextResponse.redirect(new URL("/login", request.url));
+  if (isAdminArea && !token) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/admin/login";
+    url.search = `?next=${encodeURIComponent(pathname + search)}`;
+    return NextResponse.redirect(url);
   }
 
-  // 🔓 Nếu đã đăng nhập mà vào / hoặc /login → chuyển hướng về /home
-  if (isPublicRoute && token) {
-    return NextResponse.redirect(new URL("/home", request.url));
+  if (isAdminLogin && token) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/admin";
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();
 }
-
-export const config = {
-  matcher: [
-    "/",
-    "/login",
-    "/home",
-    "/store",
-    "/dashboard/:path*", // Các route phụ
-  ],
-};
-
-// console.log("🔥 Middleware đã kích hoạt:", request.nextUrl.pathname);
+export const config = { matcher: ["/admin/:path*"] };
